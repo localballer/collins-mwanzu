@@ -1,2 +1,430 @@
-# Google App Engine generated folder
-appengine-generated/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Oils App</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#2F5D4B',secondary:'#D4B886'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F5F1E8;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .oil-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2F5D4B;
+            cursor: pointer;
+        }
+        .custom-shadow {
+            box-shadow: 0 4px 20px -2px rgba(47, 93, 75, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-[#F5F1E8] text-gray-800">
+    <!-- Nav Bar -->
+    <nav class="fixed w-full top-0 z-50 bg-white shadow-sm">
+        <div class="flex items-center justify-between px-4 py-3">
+            <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-menu-line ri-lg text-primary"></i>
+            </div>
+            <h1 class="text-2xl font-['Pacifico'] text-primary">logo</h1>
+            <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-user-line ri-lg text-primary"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16 pb-20">
+        <!-- Hero Section -->
+        <div class="relative h-48 mb-6 overflow-hidden">
+            <img src="https://readdy.ai/api/search-image?query=Beautiful%20essential%20oil%20bottles%20with%20lavender%2C%20eucalyptus%20and%20rosemary%20plants%2C%20soft%20natural%20light%2C%20premium%20luxury%20spa%20aesthetic%2C%20high-end%20product%20photography%2C%20soft%20focus%20background%2C%20organic%20elements%2C%20therapeutic%20atmosphere%2C%20holistic%20wellness&width=750&height=500&seq=1&orientation=landscape" alt="Essential Oils" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/50 flex flex-col justify-end p-4">
+                <h2 class="text-white text-2xl font-semibold mb-1">Pure Essence</h2>
+                <p class="text-white text-sm opacity-90">Discover nature's healing power</p>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="px-4 mb-6">
+            <div class="relative">
+                <input type="text" placeholder="Search oils, blends, benefits..." class="w-full py-3 pl-10 pr-4 bg-white rounded-full text-sm border-none shadow-sm">
+                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center">
+                    <i class="ri-search-line text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mood Selector -->
+        <div class="px-4 mb-6">
+            <h3 class="text-lg font-medium mb-3">How are you feeling today?</h3>
+            <div class="flex space-x-3 overflow-x-auto pb-2 scrollbar-hide">
+                <button class="flex-shrink-0 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium !rounded-button">Stressed</button>
+                <button class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium !rounded-button">Energetic</button>
+                <button class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium !rounded-button">Tired</button>
+                <button class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium !rounded-button">Focused</button>
+                <button class="flex-shrink-0 px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium !rounded-button">Relaxed</button>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="px-4 mb-6">
+            <h3 class="text-lg font-medium mb-3">Categories</h3>
+            <div class="grid grid-cols-4 gap-3">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow flex items-center justify-center">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Lavender%20essential%20oil%20bottle%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=100&height=100&seq=2&orientation=squarish" alt="Single Oils" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Single Oils</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow flex items-center justify-center">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Multiple%20essential%20oil%20bottles%20in%20a%20group%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=100&height=100&seq=3&orientation=squarish" alt="Blends" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Blends</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow flex items-center justify-center">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Essential%20oil%20diffuser%20with%20mist%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=100&height=100&seq=4&orientation=squarish" alt="Diffusers" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Diffusers</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow flex items-center justify-center">
+                        <img src="https://readdy.ai/api/search-image?query=icon%2C%203D%20cartoon%2C%20Spa%20accessories%20with%20towel%20and%20stones%2C%20the%20icon%20should%20take%20up%2070%25%20of%20the%20frame%2C%20vibrant%20colors%20with%20soft%20gradients%2C%20minimalist%20design%2C%20smooth%20rounded%20shapes%2C%20subtle%20shading%2C%20no%20outlines%2C%20centered%20composition%2C%20isolated%20on%20white%20background%2C%20playful%20and%20friendly%20aesthetic%2C%20isometric%20perspective%2C%20high%20detail%20quality%2C%20clean%20and%20modern%20look%2C%20single%20object%20focus&width=100&height=100&seq=5&orientation=squarish" alt="Accessories" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-xs text-center whitespace-nowrap overflow-hidden text-overflow-ellipsis">Accessories</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Oils -->
+        <div class="mb-6">
+            <div class="px-4 flex justify-between items-center mb-3">
+                <h3 class="text-lg font-medium">Featured Oils</h3>
+                <a href="#" class="text-primary text-sm font-medium">See All</a>
+            </div>
+            <div class="flex space-x-4 overflow-x-auto px-4 pb-2">
+                <div class="oil-card flex-shrink-0 w-36 bg-white rounded-lg overflow-hidden transition-all duration-300 custom-shadow">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Lavender%20essential%20oil%20bottle%20with%20fresh%20lavender%20flowers%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=300&height=300&seq=6&orientation=squarish" alt="Lavender Oil" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-sm mb-1">Lavender</h4>
+                        <p class="text-xs text-gray-600 mb-2">Calming & Relaxing</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-primary">$24.99</span>
+                            <button class="w-7 h-7 bg-primary rounded-full flex items-center justify-center !rounded-button">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="oil-card flex-shrink-0 w-36 bg-white rounded-lg overflow-hidden transition-all duration-300 custom-shadow">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Peppermint%20essential%20oil%20bottle%20with%20fresh%20mint%20leaves%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=300&height=300&seq=7&orientation=squarish" alt="Peppermint Oil" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-sm mb-1">Peppermint</h4>
+                        <p class="text-xs text-gray-600 mb-2">Energizing & Fresh</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-primary">$19.99</span>
+                            <button class="w-7 h-7 bg-primary rounded-full flex items-center justify-center !rounded-button">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="oil-card flex-shrink-0 w-36 bg-white rounded-lg overflow-hidden transition-all duration-300 custom-shadow">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Eucalyptus%20essential%20oil%20bottle%20with%20fresh%20eucalyptus%20leaves%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=300&height=300&seq=8&orientation=squarish" alt="Eucalyptus Oil" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-sm mb-1">Eucalyptus</h4>
+                        <p class="text-xs text-gray-600 mb-2">Clearing & Refreshing</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-primary">$21.99</span>
+                            <button class="w-7 h-7 bg-primary rounded-full flex items-center justify-center !rounded-button">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blends for You -->
+        <div class="mb-6">
+            <div class="px-4 flex justify-between items-center mb-3">
+                <h3 class="text-lg font-medium">Blends for You</h3>
+                <a href="#" class="text-primary text-sm font-medium">See All</a>
+            </div>
+            <div class="flex space-x-4 overflow-x-auto px-4 pb-2">
+                <div class="oil-card flex-shrink-0 w-36 bg-white rounded-lg overflow-hidden transition-all duration-300 custom-shadow">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Sleep%20blend%20essential%20oil%20bottle%20with%20lavender%20and%20chamomile%20elements%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=300&height=300&seq=9&orientation=squarish" alt="Sleep Blend" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-sm mb-1">Sleep Blend</h4>
+                        <p class="text-xs text-gray-600 mb-2">Restful & Calming</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-primary">$29.99</span>
+                            <button class="w-7 h-7 bg-primary rounded-full flex items-center justify-center !rounded-button">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="oil-card flex-shrink-0 w-36 bg-white rounded-lg overflow-hidden transition-all duration-300 custom-shadow">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Focus%20blend%20essential%20oil%20bottle%20with%20rosemary%20and%20lemon%20elements%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=300&height=300&seq=10&orientation=squarish" alt="Focus Blend" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-sm mb-1">Focus Blend</h4>
+                        <p class="text-xs text-gray-600 mb-2">Clarity & Concentration</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-primary">$27.99</span>
+                            <button class="w-7 h-7 bg-primary rounded-full flex items-center justify-center !rounded-button">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="oil-card flex-shrink-0 w-36 bg-white rounded-lg overflow-hidden transition-all duration-300 custom-shadow">
+                    <div class="h-36 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Immunity%20blend%20essential%20oil%20bottle%20with%20citrus%20and%20cinnamon%20elements%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=300&height=300&seq=11&orientation=squarish" alt="Immunity Blend" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium text-sm mb-1">Immunity</h4>
+                        <p class="text-xs text-gray-600 mb-2">Protective & Strengthening</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium text-primary">$32.99</span>
+                            <button class="w-7 h-7 bg-primary rounded-full flex items-center justify-center !rounded-button">
+                                <i class="ri-add-line text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oil of the Day -->
+        <div class="px-4 mb-6">
+            <div class="bg-white rounded-lg overflow-hidden custom-shadow">
+                <div class="p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-medium">Oil of the Day</h3>
+                        <span class="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded-full">May 15</span>
+                    </div>
+                    <div class="flex">
+                        <div class="w-24 h-24 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                            <img src="https://readdy.ai/api/search-image?query=Tea%20tree%20essential%20oil%20bottle%20with%20tea%20tree%20leaves%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=200&height=200&seq=12&orientation=squarish" alt="Tea Tree Oil" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">Tea Tree</h4>
+                            <p class="text-xs text-gray-600 mb-2">Purifying & Cleansing</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex">
+                                    <i class="ri-star-fill text-secondary text-xs mr-0.5"></i>
+                                    <i class="ri-star-fill text-secondary text-xs mr-0.5"></i>
+                                    <i class="ri-star-fill text-secondary text-xs mr-0.5"></i>
+                                    <i class="ri-star-fill text-secondary text-xs mr-0.5"></i>
+                                    <i class="ri-star-half-fill text-secondary text-xs"></i>
+                                </div>
+                                <span class="text-xs text-gray-500 ml-1">(487)</span>
+                            </div>
+                            <p class="text-xs text-gray-700">Perfect for skin care and household cleaning. Known for its antibacterial properties.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <span class="font-medium text-primary">$22.99</span>
+                        <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium !rounded-button">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wellness Tips -->
+        <div class="px-4 mb-6">
+            <h3 class="text-lg font-medium mb-3">Wellness Tips</h3>
+            <div class="bg-white rounded-lg overflow-hidden custom-shadow">
+                <div class="p-4">
+                    <h4 class="font-medium mb-2">3 Ways to Use Lavender Oil</h4>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-checkbox-circle-fill text-primary"></i>
+                            </div>
+                            <p>Add 3-4 drops to your diffuser before bedtime for better sleep</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-checkbox-circle-fill text-primary"></i>
+                            </div>
+                            <p>Mix with carrier oil and apply to temples to relieve headaches</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-checkbox-circle-fill text-primary"></i>
+                            </div>
+                            <p>Add a few drops to your bath for a relaxing soak</p>
+                        </li>
+                    </ul>
+                    <button class="mt-3 text-primary text-sm font-medium flex items-center !rounded-button">
+                        <span>Read more tips</span>
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personalized Recommendation -->
+        <div class="px-4 mb-6">
+            <div class="bg-primary/10 rounded-lg p-4">
+                <h3 class="text-lg font-medium mb-3">Personalized For You</h3>
+                <p class="text-sm text-gray-700 mb-3">Based on your profile, we recommend these oils for stress relief:</p>
+                <div class="flex space-x-3 overflow-x-auto pb-2">
+                    <div class="flex-shrink-0 w-20 flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=Bergamot%20essential%20oil%20bottle%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=100&height=100&seq=13&orientation=squarish" alt="Bergamot" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs text-center">Bergamot</span>
+                    </div>
+                    <div class="flex-shrink-0 w-20 flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=Ylang%20ylang%20essential%20oil%20bottle%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=100&height=100&seq=14&orientation=squarish" alt="Ylang Ylang" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs text-center">Ylang Ylang</span>
+                    </div>
+                    <div class="flex-shrink-0 w-20 flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=Frankincense%20essential%20oil%20bottle%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=100&height=100&seq=15&orientation=squarish" alt="Frankincense" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs text-center">Frankincense</span>
+                    </div>
+                    <div class="flex-shrink-0 w-20 flex flex-col items-center">
+                        <div class="w-16 h-16 bg-white rounded-full mb-2 overflow-hidden custom-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=Sandalwood%20essential%20oil%20bottle%2C%20premium%20product%20photography%2C%20soft%20natural%20lighting%2C%20minimalist%20composition%2C%20clean%20white%20background%2C%20high-end%20glass%20bottle%2C%20therapeutic%20grade%20oil%2C%20holistic%20wellness%20product%2C%20professional%20studio%20shot%2C%20product%20on%20white%20surface%2C%20commercial%20quality%2C%20detailed%20texture%2C%20centered%20composition&width=100&height=100&seq=16&orientation=squarish" alt="Sandalwood" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs text-center">Sandalwood</span>
+                    </div>
+                </div>
+                <button class="w-full bg-primary text-white py-2 rounded-lg text-sm font-medium mt-2 !rounded-button">View Stress Relief Collection</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Tab Bar -->
+    <nav class="fixed w-full bottom-0 bg-white border-t border-gray-200 z-50">
+        <div class="grid grid-cols-5 h-16">
+            <a href="#" class="flex flex-col items-center justify-center text-primary">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-home-5-fill ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-flask-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Discover</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center">
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center -mt-5 shadow-lg">
+                    <i class="ri-scan-line ri-xl text-white"></i>
+                </div>
+                <span class="text-xs mt-1 text-primary">Scan</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-shopping-bag-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Shop</span>
+            </a>
+            <a href="#" class="flex flex-col items-center justify-center text-gray-500">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-user-line ri-lg"></i>
+                </div>
+                <span class="text-xs mt-1">Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mood selector buttons
+            const moodButtons = document.querySelectorAll('.rounded-full.text-sm.font-medium');
+            moodButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    moodButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('bg-white', 'text-gray-700');
+                    });
+                    button.classList.remove('bg-white', 'text-gray-700');
+                    button.classList.add('bg-primary', 'text-white');
+                });
+            });
+
+            // Add to cart buttons
+            const addButtons = document.querySelectorAll('.w-7.h-7.bg-primary');
+            addButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productName = this.closest('.oil-card').querySelector('h4').textContent;
+                    
+                    // Create and show notification
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed top-16 left-0 right-0 mx-auto w-4/5 bg-primary text-white py-3 px-4 rounded-lg text-sm text-center z-50 shadow-lg';
+                    notification.textContent = `${productName} added to cart`;
+                    document.body.appendChild(notification);
+                    
+                    // Remove notification after 2 seconds
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        notification.style.transition = 'opacity 0.5s ease';
+                        setTimeout(() => {
+                            document.body.removeChild(notification);
+                        }, 500);
+                    }, 2000);
+                });
+            });
+
+            // Tab bar navigation
+            const tabItems = document.querySelectorAll('nav.fixed.bottom-0 a');
+            tabItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    tabItems.forEach(tab => {
+                        if (!tab.querySelector('.w-14')) {
+                            tab.classList.remove('text-primary');
+                            tab.classList.add('text-gray-500');
+                        }
+                    });
+                    if (!this.querySelector('.w-14')) {
+                        this.classList.remove('text-gray-500');
+                        this.classList.add('text-primary');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
